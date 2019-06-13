@@ -1,0 +1,19 @@
+﻿@model HotelApp.Models.Hotel
+
+@{
+    ViewBag.Title = "Count Lights";
+}
+
+@using (Html.BeginForm())
+{
+    <br />
+    @Html.Label("Guests")
+    @Html.TextBox("Guests", Model.Guests, new { @class = "form-control", min = 1, type = "number" })
+    @Html.Label("Rooms")
+    @Html.TextBox("Rooms", Model.Rooms, new { @class = "form-control", min = 1, type = "number" })
+    <br />
+    <input class="btn-primary form-control" type="submit" value="Count Lights" />
+    <br />
+    @Html.Label("Lights")
+    @Html.TextBox("Lights", Model.Lights, new { @class = "form-control", disabled = true })
+}
