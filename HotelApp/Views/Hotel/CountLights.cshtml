@@ -6,6 +6,8 @@
 
 @using (Html.BeginForm())
 {
+    var roomLights = Model.RoomLights.Select((light, index) => new KeyValuePair<int, bool>(index + 1, light)).Where(light => light.Value).ToList();
+
     <br />
     @Html.Label("Guests")
     @Html.TextBox("Guests", Model.Guests, new { @class = "form-control", min = 1, type = "number" })
@@ -15,7 +17,7 @@
     <input class="btn-primary form-control" type="submit" value="Count Lights" />
     <br />
     @Html.Label("Room Lights")
-    @Html.TextBox("Room Lights", string.Join(", ", Model.RoomLights.Select((light, index) => new KeyValuePair<int, bool>(index + 1, light)).Where(light => light.Value).Select(light => light.Key)), new { @class = "form-control", disabled = true })
+    @Html.TextBox("Room Lights", string.Join(", ", roomLights.Select(light => light.Key)), new { @class = "form-control", disabled = true })
     @Html.Label("Total Lights")
-    @Html.TextBox("Total Lights", Model.RoomLights.Where(light => light).Count(), new { @class = "form-control", disabled = true })
+    @Html.TextBox("Total Lights", roomLights.Count, new { @class = "form-control", disabled = true })
 }
