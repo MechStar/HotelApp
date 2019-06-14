@@ -16,8 +16,8 @@
     <br />
     <input class="btn-primary form-control" type="submit" value="Count Lights" />
     <br />
-    @Html.Label("Room Lights")
-    @Html.TextBox("Room Lights", string.Join(", ", roomLightsOn.Select(light => light.Key)), new { @class = "form-control", disabled = true })
+    @Html.Label("Lights On")
+    @Html.TextBox("Lights On", string.Join(", ", roomLightsOn.Select(light => light.Key)), new { @class = "form-control", disabled = true })
     @Html.Label("Total Lights")
     @Html.TextBox("Total Lights", roomLightsOn.Count, new { @class = "form-control", disabled = true })
 }
