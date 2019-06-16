@@ -7,7 +7,7 @@ namespace HotelApp.Controllers
     {
         public ActionResult CountLights(Hotel model)
         {
-            return View(model ?? new Hotel());
+            return View(model);
         }
     }
 }
