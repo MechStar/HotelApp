@@ -1,4 +1,4 @@
-﻿using HotelApp.Attributes;
+﻿using HotelApp.Filters;
 using System.Web.Mvc;
 
 namespace HotelApp

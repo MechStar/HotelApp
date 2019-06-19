@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace HotelApp.Attributes
+namespace HotelApp.Filters
 {
     public class LogAndHandleError : HandleErrorAttribute
     {
