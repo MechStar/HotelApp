@@ -2,12 +2,11 @@
 
 @{
     ViewBag.Title = "Count Lights";
+    var roomLightsOn = Model.RoomLights.Select((light, index) => new KeyValuePair<int, bool>(index + 1, light)).Where(light => light.Value).ToList();
 }
 
 @using (Html.BeginForm())
 {
-    var roomLightsOn = Model.RoomLights.Select((light, index) => new KeyValuePair<int, bool>(index + 1, light)).Where(light => light.Value).ToList();
-
     @Html.AntiForgeryToken()
     <br />
     @Html.Label("Guests")
@@ -16,9 +15,10 @@
     @Html.TextBox("Rooms", Model.Rooms, new { @class = "form-control", min = 1, required = true, type = "number" })
     <br />
     <input class="btn-primary form-control" type="submit" value="Count Lights" />
-    <br />
-    @Html.Label("Lights On")
-    @Html.TextBox("Lights On", string.Join(", ", roomLightsOn.Select(light => light.Key)), new { @class = "form-control", disabled = true })
-    @Html.Label("Total Lights")
-    @Html.TextBox("Total Lights", roomLightsOn.Count, new { @class = "form-control", disabled = true })
 }
+
+<br />
+@Html.Label("Lights On")
+@Html.TextBox("Lights On", string.Join(", ", roomLightsOn.Select(light => light.Key)), new { @class = "form-control", disabled = true })
+@Html.Label("Total Lights")
+@Html.TextBox("Total Lights", roomLightsOn.Count, new { @class = "form-control", disabled = true })
