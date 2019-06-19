@@ -12,9 +12,9 @@
 
             for (long guestNum = 1; guestNum <= guests; guestNum++)
             {
-                long flipsByGuest = rooms / guestNum;
+                long lightsToFlip = rooms / guestNum;
 
-                for (long flip = 1; flip <= flipsByGuest; flip++)
+                for (long flip = 1; flip <= lightsToFlip; flip++)
                 {
                     long roomNum = guestNum * flip - 1;
 
