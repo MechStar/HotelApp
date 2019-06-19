@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using HotelApp.Attributes;
+using System.Web.Mvc;
 
 namespace HotelApp
 {
@@ -6,7 +7,7 @@ namespace HotelApp
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+            filters.Add(new LogAndHandleError());
         }
     }
 }
