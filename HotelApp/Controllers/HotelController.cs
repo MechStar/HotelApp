@@ -9,8 +9,8 @@ namespace HotelApp.Controllers
         [HttpGet]
         public ActionResult CountLights()
         {
-            var defaultGuests = long.Parse(ConfigurationManager.AppSettings["DefaultGuests"]);
-            var defaultRooms = long.Parse(ConfigurationManager.AppSettings["DefaultRooms"]);
+            var defaultGuests = long.Parse(ConfigurationManager.AppSettings["DefaultGuests"] ?? "0");
+            var defaultRooms = long.Parse(ConfigurationManager.AppSettings["DefaultRooms"] ?? "0");
 
             return View(new Hotel() { Guests = defaultGuests, Rooms = defaultRooms });
         }
