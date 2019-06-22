@@ -9,10 +9,10 @@
 {
     @Html.AntiForgeryToken()
     <br />
-    @Html.Label("Guests")
-    @Html.TextBox("Guests", Model.Guests, new { @class = "form-control", min = 1, required = true, type = "number" })
-    @Html.Label("Rooms")
-    @Html.TextBox("Rooms", Model.Rooms, new { @class = "form-control", min = 1, required = true, type = "number" })
+    @Html.LabelFor(model => model.Guests)
+    @Html.TextBoxFor(model => model.Guests, new { @class = "form-control", min = 1, required = true, type = "number" })
+    @Html.LabelFor(model => model.Rooms)
+    @Html.TextBoxFor(model => model.Rooms, new { @class = "form-control", min = 1, required = true, type = "number" })
     <br />
     <input class="btn-primary form-control" type="submit" value="Count Lights" />
 }
