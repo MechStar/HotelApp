@@ -2,7 +2,7 @@
 
 namespace HotelApp.Filters
 {
-    public class LogAndHandleError : HandleErrorAttribute
+    public class LogAndHandleErrorAttribute : HandleErrorAttribute
     {
         private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
