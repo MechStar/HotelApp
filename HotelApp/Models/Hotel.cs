@@ -1,14 +1,16 @@
-﻿namespace HotelApp.Models
+﻿using System.Collections.Generic;
+
+namespace HotelApp.Models
 {
     public class Hotel
     {
         public long Guests { get; set; }
         public long Rooms { get; set; }
-        public bool[] RoomLights => GetRoomLights(Guests, Rooms);
+        public IEnumerable<bool> RoomLights => GetRoomLights(Guests, Rooms);
 
-        private bool[] GetRoomLights(long guests, long rooms)
+        private IEnumerable<bool> GetRoomLights(long guests, long rooms)
         {
-            bool[] roomLights = new bool[rooms];
+            var roomLights = new bool[rooms];
 
             for (long guestNum = 1; guestNum <= guests; guestNum++)
             {
